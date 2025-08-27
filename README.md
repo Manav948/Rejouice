@@ -1,12 +1,25 @@
-# React + Vite
+# 🎬 Rejouice Clone  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A front-end clone of the creative **Rejouice website** built using **React GSAP swiper js locomotive js**.  
+The project focuses on replicating smooth animations, responsive layouts, and engaging user interactions.  
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Pixel-perfect layout inspired by the original Rejouice site  
+- Smooth animations and transitions  
+- Fully responsive design  
+- Interactive UI elements  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+React
+gsap
+swiper js
+locomotive js
 
-## Expanding the ESLint configuration
+## 📂 Installation
+Clone the repository and open in your browser:  
+```bash
+git clone https://github.com/your-username/rejouice-clone.git
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+then
+npm run dev
