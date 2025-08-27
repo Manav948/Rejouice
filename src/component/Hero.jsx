@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
+import Slider from "./Slider"
 import LocomotiveScroll from "locomotive-scroll"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import "locomotive-scroll/dist/locomotive-scroll.css"
+import { video } from "framer-motion/client"
 gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
@@ -10,6 +12,7 @@ const Hero = () => {
   const scrollRef = useRef(null)
   const textRef2 = useRef(null)
   const textRef3 = useRef(null)
+  const videoRef = useRef(null)
 
   // locomotive-scroll setup
   useEffect(() => {
@@ -24,6 +27,24 @@ const Hero = () => {
     }
   }, [])
 
+  useEffect(() => {
+    gsap.fromTo(
+      videoRef.current,
+      { width: "60%", height: "60%", borderRadius: "20px" },
+      {
+        width: "100%",
+        height: "100%",
+        borderRadius: "0px",
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: videoRef.current,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true
+        }
+      }
+    )
+  }, [])
   // text animation in page2
   const animateLine = (ref, triggerId) => {
     if (!ref.current) return
@@ -56,8 +77,8 @@ const Hero = () => {
     const cursor = document.getElementById(cursorId)
     if (!page || !cursor) return
 
-    const xMove = gsap.quickTo(cursor, "x", { duration: 0.3, ease: "power3.out" })
-    const yMove = gsap.quickTo(cursor, "y", { duration: 0.3, ease: "power3.out" })
+    const xMove = gsap.quickTo(cursor, "x", { duration: 1.3, ease: "power3.out" })
+    const yMove = gsap.quickTo(cursor, "y", { duration: 1.3, ease: "power3.out" })
 
     const moveCursor = (e) => {
       xMove(e.clientX - cursor.offsetWidth / 2)
@@ -65,12 +86,12 @@ const Hero = () => {
     }
 
     page.addEventListener("mouseenter", () => {
-      gsap.to(cursor, { opacity: 1, scale: 1, duration: 0.3 })
+      gsap.to(cursor, { opacity: 1, scale: 1, duration: 1.5 })
       window.addEventListener("mousemove", moveCursor)
     })
 
     page.addEventListener("mouseleave", () => {
-      gsap.to(cursor, { opacity: 0, scale: 0, duration: 0.3 })
+      gsap.to(cursor, { opacity: 0, scale: 0, duration: 1.5 })
       window.removeEventListener("mousemove", moveCursor)
     })
   }
@@ -256,8 +277,58 @@ const Hero = () => {
       <hr className="border-t border-gray-700 w-full" />
 
       {/* slider section */}
-      <div className="w-full h-full bg-white">
-      
+      <div className="w-full h-[500px] md:h-500px] bg-white px-6 md:px-12 py-10 mt-7">
+        <Slider
+          slides={[
+            "https://images.prismic.io/rejouice-2024/Z1m0-JbqstJ98Vh9_pergola-module-floor-1-360-grey-blue-bioclimatic-ceiling-and-curtains2.png?auto=format,compress",
+            "https://www.rejouice.com/_vercel/image?url=https:%2F%2Fimages.prismic.io%2Frejouice-2024%2FZ1m0HZbqstJ98VgZ_oura-abdul-ovaice-3d-cd-031.png?auto=format,compress?auto=compress,format&w=1536&q=80",
+            "./sliderImg1.avif",
+            "./sliderImg2.avif",
+            "./sliderImg3.avif",
+          ]}
+        />
+
+        <div className="mt-40 text-black px-6 md:px-20">
+          {/* Section Title */}
+          <h1 className="text-6xl md:text-7xl font-light">Our approach.</h1>
+
+          {/* Row 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 mb-20 text-lg md:text-xl">
+            <p className="font-medium">
+              A simple philosophy: <br />
+              quality over quantity.
+            </p>
+            <p className="leading-relaxed">
+              We partner with five clients a year to deliver unmatched focus, and impact.
+              Every detail is carefully crafted, every decision strategic, and every
+              outcome transformative.
+            </p>
+          </div>
+          <hr className="border-t border-gray-400" />
+
+          {/* Row 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 mb-20 text-lg md:text-xl">
+            <p className="font-medium">
+              Performance & emotion. <br />
+              You need both.
+            </p>
+            <p className="leading-relaxed">
+              We craft brands that become category leaders. These brands aren’t built on
+              products alone. Emotional connection and sustainable growth are the two
+              essentials to get there. This is how you drive retention and advocacy.
+            </p>
+          </div>
+          <hr className="border-t border-gray-400" />
+        </div>
+        <div className="w-full h-screen flex items-center justify-center">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            className="object-cover"
+            src="./video6.mp4" />
+        </div>
       </div>
     </div>
   )
