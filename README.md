@@ -18,8 +18,9 @@ locomotive js
 ## 📂 Installation
 Clone the repository and open in your browser:  
 ```bash
-git clone https://github.com/your-username/rejouice-clone.git
+1) Clone the project
+https://github.com/Manav948/Rejouice-clone.git
+2) install dependancies
 npm install
-
-then
+3) run this command on terminal
 npm run dev
