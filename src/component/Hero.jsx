@@ -144,7 +144,7 @@ const Hero = () => {
             <div className="hidden md:flex gap-6 lg:gap-10 text-sm md:text-base">
               <a href="#home" className="hover:text-gray-300 transition">Home</a>
               <a href="#work" className="hover:text-gray-300 transition">Work</a>
-              <a href="#about" className="hover:text-gray-300 transition">About</a>
+              <a href="/about" className="hover:text-gray-300 transition">About</a>
               <a href="#service" className="hover:text-gray-300 transition">Service</a>
             </div>
             <p className="cursor-pointer text-base md:text-xl hover:text-gray-300 transition">
@@ -173,12 +173,12 @@ const Hero = () => {
 
       {/* Section 3 */}
       <hr className="border-t border-gray-700 w-full" />
-      <div id="page3" ref={textRef3} className="w-full h-4/6 bg-black text-white md:px-12 py-10 flex flex-col md:flex-row md:justify-between md:items-start">
+      <div id="page3" ref={textRef3} className="w-full h-4/6 bg-black text-white md:px-12 py-20 flex flex-col md:flex-row md:justify-between md:items-start">
         <span className="text-xl font-sans pl-28">Tomorrow’s brands, today.</span>
         <div className="max-w-xl space-y-6 text-xl leading-relaxed">
-          <p>Since 2013, we have been recognized globally for helping founders build market-defining brands.</p>
-          <p>We partner with five clients a year to give each one the focus and care they deserve.</p>
-          <p className="underline underline-offset-4 hover:text-gray-300 transition">Learn more↗</p>
+          <span className="flex">Since 2013, we have been recognized globally for helping founders build market-defining brands.</span> <br />
+          <span className="flex">We partner with five clients a year to give each one the focus and care they deserve.</span> <br />
+          <span className="underline underline-offset-4 hover:text-gray-300 transition">Learn more↗</span>
         </div>
       </div>
 
@@ -249,7 +249,7 @@ const Hero = () => {
         <div className="w-full h-screen flex items-center justify-center">
           <video ref={videoRef} autoPlay loop muted className="object-cover" src="./video6.mp4" />
         </div>
-      </div> 
+      </div>
 
       {/* Footer */}
       <footer className="bg-black text-white px-6 md:px-20 py-16 mt-14 relative h-screen">
