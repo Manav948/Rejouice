@@ -23,22 +23,23 @@ const About = () => {
         }
     }, [])
 
-    const animation = (ref, triggerId) => {
+    const animation = (ref, triggerId, direction = "up") => {
         if (!ref.current) return
         const lines = ref.current.querySelectorAll('span')
 
-        gsap.fromTo(lines, {
-            y: 100,
-            opacity: 0
-        },
+        gsap.fromTo(lines,
+            direction === "up"
+                ? { y: 100, opacity: 0 }
+                : { x: 100, opacity: 0 },
             {
-                y: 0,
+                y: direction === "up" ? 0 : undefined,
+                x: direction === "right" ? 0 : undefined,
                 opacity: 1,
                 stagger: 0.3,
                 ease: "power4.out",
                 duration: 1.2,
                 scrollTrigger: {
-                    trigger: `#section-1`,
+                    trigger: `#${triggerId}`,
                     scroller: scrollRef.current,
                     start: "top 80%",
                     end: "bottom 30%",
@@ -48,8 +49,8 @@ const About = () => {
     }
 
     useEffect(() => {
-        animation(textRef, "section-1")
-        animation(textRef1, "section-2")
+        animation(textRef, "section-1", "up")
+        animation(textRef1, "section-2", "right")
     })
     return (
         <div id='main' className='w-full min-h-screen '>
@@ -81,18 +82,18 @@ const About = () => {
             <hr className='border-t mt-20 border-gray-400' />
             {/* section 2 */}
             <div id="section-2" ref={textRef1} className="mt-10 text-black px-6 md:px-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 mb-20 text-lg md:text-xl">
-                    <span className="font-medium">We operate on <br /> simple principless </span>
-                    <span className="leading-relaxed">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20 mb-20 text-lg md:text-xl">
+                    <span className="font-medium pl-16">We operate on <br /> simple principless </span>
+                    <span className="leading-relaxed pl-[350px]">
                         <p>(01)Put people first</p>
                         <p>(02)Pursue excellences</p>
                         <p>(03)Embrace challenges</p>
                     </span>
                 </div>
 
-                <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 mb-20 text-lg md:text-xl text-center">
-                    <span className="leading-relaxed">
-                       These three principles have earned us numerous awards. While we don’t chase accolades, they are proof of our dedication to impact, quality, and innovation.
+                <div className=" pl-[450px] grid grid-cols-1 md:grid-cols-2 mt-20 mb-20 text-lg md:text-xl text-center">
+                    <span className="leading-relaxed ">
+                        These three principles have earned us numerous awards. While we don’t chase accolades, they are proof of our dedication to impact, quality, and innovation.
                     </span>
                 </div>
             </div>
