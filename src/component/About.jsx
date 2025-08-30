@@ -150,12 +150,12 @@ const About = () => {
         <div id='main' className='w-full min-h-screen '>
 
             <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 py-6">
-                <p className="text-sm md:text-xl font-extrabold tracking-wide">rejouice</p>
-                <div className="hidden md:flex gap-6 lg:gap-10 text-xl md:text-base">
+                <p className="text-sm md:text-xl font-semibold tracking-wide">The Growth Accelerator</p>
+                <div className="hidden md:flex gap-6 lg:gap-10 text-sm md:text-base">
                     <a href="/" className="hover:text-gray-300 transition">Home</a>
-                    <a href="#work" className="hover:text-gray-300 transition">Work</a>
+                    <a href="/service" className="hover:text-gray-300 transition">Service</a>
                     <a href="/about" className="hover:text-gray-300 transition">About</a>
-                    <a href="#service" className="hover:text-gray-300 transition">Service</a>
+                    <a href="/contact" className="hover:text-gray-300 transition">Contact</a>
                 </div>
                 <p className="cursor-pointer text-base md:text-xl hover:text-gray-300 transition">
                     Let&apos;s talk ↗
@@ -313,11 +313,10 @@ const About = () => {
                     </div>
 
                     <div className="flex flex-col gap-2 text-lg">
-                        <a href="#home" className="hover:underline">Home</a>
-                        <a href="#work" className="hover:underline">Work</a>
-                        <a href="#about" className="hover:underline">About</a>
-                        <a href="#services" className="hover:underline">Services</a>
-                        <a href="#contact" className="hover:underline">Contact</a>
+                        <a href="/" className="hover:underline">Home</a>
+                        <a href="/about" className="hover:underline">About</a>
+                        <a href="/service" className="hover:underline">Services</a>
+                        <a href="/contact" className="hover:underline">Contact</a>
                     </div>
 
                     <div className="flex flex-col justify-between text-sm md:text-base">

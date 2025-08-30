@@ -142,10 +142,10 @@ const Hero = () => {
           <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 py-6">
             <p className="text-sm md:text-xl font-semibold tracking-wide">The Growth Accelerator</p>
             <div className="hidden md:flex gap-6 lg:gap-10 text-sm md:text-base">
-              <a href="#home" className="hover:text-gray-300 transition">Home</a>
-              <a href="#work" className="hover:text-gray-300 transition">Work</a>
+              <a href="/" className="hover:text-gray-300 transition">Home</a>
+              <a href="/service" className="hover:text-gray-300 transition">Service</a>
               <a href="/about" className="hover:text-gray-300 transition">About</a>
-              <a href="#service" className="hover:text-gray-300 transition">Service</a>
+              <a href="/contact" className="hover:text-gray-300 transition">Contact</a>
             </div>
             <p className="cursor-pointer text-base md:text-xl hover:text-gray-300 transition">
               Let&apos;s talk ↗
