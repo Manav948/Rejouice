@@ -9,6 +9,9 @@ const Service = () => {
   const scrollRef = useRef(null);
   const textRef1 = useRef(null)
   const textRef2 = useRef(null)
+  const textRef3 = useRef(null);
+  const textRef4 = useRef(null);
+  const textRef5 = useRef(null);
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -70,8 +73,11 @@ const Service = () => {
     )
   }
   useEffect(() => {
-    animationLine(textRef1, "section-1", "up")
+    animationLine(textRef1, "section-1", "down")
     animationLine(textRef2, "section-2", "left")
+    animationLine(textRef3, "section-3", "left")
+    animationLine(textRef4, "section-4", "up")
+    animationLine(textRef5, "section-5", "down")
   })
 
   return (
@@ -187,13 +193,13 @@ const Service = () => {
       </div>
 
       {/* section-3 */}
-      <div className='w-full min-h-screen flex items-center justify-between pl-20 pr-20 text-2xl font-extrabold'>
+      <div id='section-3' ref={textRef3} className='w-full h-full flex items-center justify-between pl-20 pr-20 text-2xl font-extrabold mt-56 mb-20'>
         <div>
           <span>We offer two</span><br />
           <span>engagement models</span>
         </div>
 
-        <div>
+        <div className='bg-[#f3f3f3] px-32 py-5 rounded-xl'>
           <span>Classic Model</span><br />
           <span>Cash Compensation</span>
         </div>
@@ -203,7 +209,23 @@ const Service = () => {
           <span>Less Cash, Some Equity</span>
         </div>
       </div>
-      <hr className='border-t border-gray-400 mb-20' />
+      <hr className='border-t border-gray-400 mb-20 ' />
+
+      {/* section 4 */}
+      <div id='section-4' ref={textRef4} className='bg-white w-full h-[500px] text-[420px] text-center mt-20'>
+        <span>C</span>
+        <span>l</span>
+        <span>a</span>
+        <span>s</span>
+        <span>s</span>
+        <span>i</span>
+        <span>c</span>
+      </div>
+      {/* section-5 */}
+      <div id='section-5' ref={textRef5} className='text-center mt-40 text-6xl'>
+        <span>Elevate Your Brand.</span><br />
+        <span>Outpace The Competition.</span>
+      </div>
       {/* footer section */}
       <footer className="bg-black text-white px-6 md:px-20 py-16 mt-14 relative min-h-screen w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
