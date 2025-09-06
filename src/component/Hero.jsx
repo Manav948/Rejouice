@@ -109,7 +109,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div id="main" className="relative w-full h-screen">
+    <div id="main" ref={scrollRef} data-scroll-container className="relative w-full min-h-screen overflow-hidden">
       {/* Page 1 Section */}
       <div id="page1" className="relative w-full h-screen overflow-hidden text-white">
         {/* Cursor */}
@@ -163,24 +163,45 @@ const Hero = () => {
       {/* Section 2 */}
       <div id="page2" className="bg-black w-full min-h-screen flex items-center justify-center text-white px-6 md:px-12">
         <h2 ref={textRef2} className="max-w-6xl text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-snug tracking-wide">
-          <span className="block pl-36">We turn founders’ visions into </span>
-          <span className="block pr-40">remarkable brands by combining</span>
-          <span className="block pl-40"> strategy, design, and performance </span>
-          <span className="block pr-16">marketing, all under one roof. Explore </span>
-          <span className="block">our services.</span>
+          <span className="block px-4 sm:px-10 md:pl-36">We turn founders’ visions into </span>
+          <span className="block px-4 sm:px-10 md:pr-40">remarkable brands by combining</span>
+          <span className="block px-4 sm:px-10 md:pl-40"> strategy, design, and performance </span>
+          <span className="block px-4 sm:px-10 md:pr-16">marketing, all under one roof. Explore </span>
+          <span className="block px-4 sm:px-10">our services.</span>
         </h2>
       </div>
 
       {/* Section 3 */}
       <hr className="border-t border-gray-700 w-full" />
-      <div id="page3" ref={textRef3} className="w-full h-4/6 bg-black text-white md:px-12 py-20 flex flex-col md:flex-row md:justify-between md:items-start">
-        <span className="text-xl font-sans pl-28">Tomorrow’s brands, today.</span>
-        <div className="max-w-xl space-y-6 text-xl leading-relaxed">
-          <span className="flex">Since 2013, we have been recognized globally for helping founders build market-defining brands.</span> <br />
-          <span className="flex">We partner with five clients a year to give each one the focus and care they deserve.</span> <br />
-          <span className="underline underline-offset-4 hover:text-gray-300 transition">Learn more↗</span>
+      <div
+        id="page3"
+        ref={textRef3}
+        className="w-full min-h-screen bg-black text-white px-6 md:px-12 py-16 flex flex-col md:flex-row md:justify-between md:items-start text-center md:text-left gap-8 md:gap-16"
+      >
+        {/* Left text */}
+        <span className="text-2xl md:text-3xl font-sans md:pl-10 lg:pl-28">
+          Tomorrow’s brands, today.
+        </span>
+
+        {/* Right text block */}
+        <div className="max-w-xl space-y-6 text-base sm:text-lg md:text-xl leading-relaxed md:pl-10 lg:pl-28">
+          <p>
+            Since 2013, we have been recognized globally for helping founders build
+            market-defining brands.
+          </p>
+          <p>
+            We partner with five clients a year to give each one the focus and care
+            they deserve.
+          </p>
+          <a
+            href="#"
+            className="underline underline-offset-4 hover:text-gray-300 transition"
+          >
+            Learn more↗
+          </a>
         </div>
       </div>
+
 
       {/* Section 4 */}
       <div id="page4" className="relative w-full h-screen overflow-hidden bg-black text-white">
