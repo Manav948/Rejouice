@@ -273,8 +273,8 @@ const Hero = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black text-white px-6 md:px-20 py-16 mt-14 relative h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
+      <footer className="bg-black text-white px-6 md:px-20 py-16 mt-14 relative min-h-screen w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-light">Do it once. Do it right.</h2>
             <div>
@@ -291,11 +291,10 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col gap-2 text-lg">
-            <a href="#home" className="hover:underline">Home</a>
-            <a href="#work" className="hover:underline">Work</a>
-            <a href="#about" className="hover:underline">About</a>
-            <a href="#services" className="hover:underline">Services</a>
-            <a href="#contact" className="hover:underline">Contact</a>
+            <a href="/" className="hover:underline">Home</a>
+            <a href="/about" className="hover:underline">About</a>
+            <a href="/service" className="hover:underline">Services</a>
+            <a href="/contact" className="hover:underline">Contact</a>
           </div>
 
           <div className="flex flex-col justify-between text-sm md:text-base">

@@ -336,7 +336,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <h1 className="absolute bottom-0 left-0 w-full text-[150px] md:text-[350px] font-bold leading-none text-center p-5">
+                <h1 className="bottom-0 left-0 w-full text-[150px] md:text-[350px] font-bold leading-none text-center p-5">
                     rejoUice
                 </h1>
             </footer>
